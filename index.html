@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Havish</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="scroll-progress"></div>
+
+    <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navBar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Havish</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navBar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="index.html">&#8962; Home</a></li>
+                    <li><a href="bio.html">Bio</a></li>
+                    <li><a href="project.html">Project</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero-section">
+        <div class="hero-card">
+            <h1>Welcome to My Website</h1>
+            <p>AP Computer Science Principles Portfolio by Havish</p>
+        </div>
+    </div>
+
+    <div class="container content-section">
+        <div class="content-card">
+            <h2>Interactive Features</h2>
+            <p>Click these buttons to test my JavaScript code:</p>
+            <div style="margin-top: 15px;">
+                <button class="uiverse-btn" onclick="document.body.classList.toggle('dark-mode')">Toggle Dark Mode</button>
+                <button class="uiverse-btn" onclick="addLike()">Likes: <span id="likeText">0</span></button>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <h2>About This Portfolio</h2>
+            <p>This website was built for AP Computer Science Principles at Granada High School. You can see my interests, upcoming projects, and contact info below.</p>
+            <div style="margin-top: 15px;">
+                <a href="bio.html" class="btn btn-default" style="margin: 5px;">My Bio</a>
+                <a href="project.html" class="btn btn-default" style="margin: 5px;">My Projects</a>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <h2>Quick Links</h2>
+            <p>Go directly to any page on my site:</p>
+            <div style="margin-top: 10px;">
+                <a href="hobbies.html" class="btn btn-primary" style="margin: 4px;">My Hobbies</a>
+                <a href="websites.html" class="btn btn-primary" style="margin: 4px;">Favorite Sites</a>
+                <a href="contact.html" class="btn btn-primary" style="margin: 4px;">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>Havish Manthena</p>
+        <p>
+            <a href="https://www.granadahigh.org" target="_blank">Granada High School</a> | 
+            <a href="mailto:manthenahavish@gmail.com">&#9993; manthenahavish@gmail.com</a>
+        </p>
+    </footer>
+
+    <script>
+        let likes = 0;
+        function addLike() {
+            likes++;
+            document.getElementById("likeText").innerText = likes;
+        }
+
+        window.onscroll = function() {
+            let winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            document.getElementById("scroll-progress").style.width = (winScroll / height * 100) + "%";
+        };
+    </script>
+</body>
+</html>
